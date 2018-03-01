@@ -1,0 +1,25 @@
+<% obj.each do |article| %>
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="well well-lg">
+                  <div class="article-title">
+                      <%= link_to article.title, article_path(article) %>
+                  </div>
+                  <div class="article-body">
+                      <%= truncate(article.description, length: 50) %>
+                      <div class="article-meta-details">
+                          <small>created by: <%= article.user.password_digest if article.user %><br />
+                          created_at: <%= time_ago_in_words(Article.last.created_at)%> ago <br />
+                          last updated: <%= time_ago_in_words(Article.last.updated_at) %> ago</small>
+                      </div>
+                  </div>
+                  <% if logged_in? && (current_user == article.user || current_user.admin?)%>
+                      <div class="article-actions">
+                          <a href="pulpit/Dokument bez nazwy" id="smart-contract-time" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#exampleModalCenterTime" download>Generate confirmation</a>
+                          <button class="print-btn"><%= image_tag "icon-print.jpg" , style: "width:20px;" %></button>
+                      </div>
+                  <% end %>
+              </div>
+          </div>
+      </div>
+  <%end%>

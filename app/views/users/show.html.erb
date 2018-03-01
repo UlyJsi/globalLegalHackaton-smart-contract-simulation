@@ -1,0 +1,10 @@
+<h1 align="center"><%= @user.username %>'s home page</h1>
+
+<div class="container jumbotron">
+    <p align="center" class="col-xs-6 text-left">Sendfile history</p>
+    <div class="col-xs-6 text-right padding-0">
+        <%= link_to "New", new_transaction_path, class: "btn btn-primary btn-large black" %>
+    </div>
+    <%= render "contracts/contract", obj: @user_articles %>
+</div>
+<%= render partial: "transactions/modal_generate" %>

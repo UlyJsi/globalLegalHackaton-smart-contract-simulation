@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenterTime" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="modal-title text-center border-bottom padding-tb-20 fs-24" id="exampleModalLongTitle">Delivery time</p>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper term-description">
+          <div class="col-xs-12 text-center">
+            <label id="date-descrip" style="color: #000;font-weight:normal;padding:10px 0;">You will be able to download the file on: </label><br/>
+            <label id="date-accept"></label>
+            <label id="date-accept-show"><%= "2018-12-12T00:00".tr('T', ' ') %></label>
+          </div>
+          <div class="col-sm-6 show-date">
+            <label>Set a delivery time</label>
+            <input id="show-date" type="datetime-local" name="date">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger no-accept-green">I do not accept</button>
+        <button type="button" class="btn btn-success accept-green-time" >I accept</button>
+      </div>
+    </div>
+  </div>
+</div>

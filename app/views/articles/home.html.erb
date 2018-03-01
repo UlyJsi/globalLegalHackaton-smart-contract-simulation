@@ -1,0 +1,10 @@
+<div class="center jumbotron">
+    <%= image_tag("block-doc.png")%>
+    <h1>Secure yourself and your document delivery<h1>
+    <p style="padding:10px 0;">Ready for CHAIN'ge</p>
+    <% if logged_in? %>
+        <%= link_to "LOG OUT", logout_path, method: :delete, class: "btn btn-primary btn-xlarge" %>
+    <% else %>
+        <%= link_to "SIGN UP", signup_path, class: "btn btn-primary btn-xlarge" %>
+    <% end %>
+</div>

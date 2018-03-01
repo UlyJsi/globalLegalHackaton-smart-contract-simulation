@@ -1,0 +1,50 @@
+<!-- Modal -->
+<% @user = User.find(9) %>
+<div class="modal fade" id="exampleModalCenterTime" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <p class="modal-title text-center border-bottom padding-tb-20 fs-24" id="exampleModalLongTitle">Confirmation</p>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper term-description">
+          <div class="form-group">
+            <div class="control-label col-sm-3">
+                <label>sent by:</label>
+            </div>
+            <div class="col-sm-9">
+                <p><%= @user.username %></p>
+            </div>
+            <div class="control-label col-sm-3">
+                <label>created at:</label>
+            </div>
+            <div class="col-sm-9">
+                <p><%= Time.now %></p>
+            </div>
+            <div class="control-label col-sm-3">
+                <label>status:</label>
+            </div>
+            <div class="col-sm-9">
+                <p><%= true %></p>
+            </div>
+            <div class="control-label col-sm-3">
+                <label>receiver:</label>
+            </div>
+            <div class="col-sm-9">
+                <p><%= User.all.take(3).last %></p>
+            </div>
+          </div>
+          <div class="col-xs-12 text-center" style="margin:20px 0;">
+            <a href="pulpit/Dokument bez nazwy" class="btn btn-xs btn-primary" download>Generate confirmation</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

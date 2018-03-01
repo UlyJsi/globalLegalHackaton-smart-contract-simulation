@@ -1,0 +1,27 @@
+<div class="container jumbotron" style="background-color: gainsboro;">
+  <p align="center" class="col-xs-6 text-left">You have a new file</p>
+  <div class="col-xs-12 text-center padding-tb-20">
+    <p style="border:none;font-size:16px;">Please, accept the contract below: </p>
+    <button id="smart-contract-nda" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+        NDA
+    </button>
+    <button id="smart-contract-time" type="button" class="btn btn-danger smart-contract-time" data-toggle="modal" data-target="#exampleModalCenterTime">
+        Delivery time
+    </button>
+  </div>
+  <div class="col-xs-12 text-center">
+    <label id="date-accept"></label>
+  </div>
+  <div id="download-file" class="col-xs-12 text-center">
+    <a href="pulpit/Dokument bez nazwy" class="download-file" download>Download file</a>
+  </div>
+</div>
+
+<div class="container jumbotron">
+  <p align="center" class="col-xs-6 text-left">Sendfile history</p>
+  <div class="col-xs-6 text-right padding-0">
+      <%= link_to "New", new_transaction_path, class: "btn btn-primary btn-large black" %>
+  </div>
+</div>
+<%= render partial: "transactions/modal" %>
+<%= render partial: "transactions/modal_time" %>

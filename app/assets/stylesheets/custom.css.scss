@@ -1,0 +1,114 @@
+$navbar-default-bg: #000;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+// HOME
+body {
+    background-image: asset-url("shutterstock_65481526-1000x589.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+h1,
+h2,
+h4,
+td,
+tr,
+label {
+    color: #fff;
+}
+
+label {color: grey;}
+a {color:grey;&:hover {color:#000;}}
+.padding-0 {padding: 0;}
+.padding-tb-20 {padding: 20px 0;}
+.black {background-color: #000;border: 1px solid #000; &:hover {background-color: grey;border: 1px solid grey;}}
+.grey {background-color: grey;border: 1px solid grey; &:hover {background-color: transparent;border: 1px solid black;color:#000;}}
+.light-grey {background-color: gainsboro;}
+.fs-24 {font-size:24px;}
+.navbar-default .navbar-nav > li > a {color: #fff;}
+.border-bottom {border-bottom: 1px solid #000;}
+.modal-header, .modal-footer {border: none;}
+.jumbotron .download-file {font-size: 24px;display: inline-block;border: 1px solid grey;padding: 10px 20px;text-decoration: none; &:hover {color:grey;}}
+
+#date-accept-show {margin-bottom: 30px;}
+a:focus {color:grey;}
+.jumbotron h1 {font-size: 40px;}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color: #fff;
+    margin-top: 30px;
+    box-shadow: 3px 29px 100px 0px rgba(31,30,31,1);
+    h1 {
+        letter-spacing: -1px;
+        font-weight: bold;
+    }
+    p {
+        border-bottom: 1px solid #000;
+    }
+}
+
+.btn-xlarge {
+    background-color: #000;
+    padding: 10px 30px;
+    border: 1px solid #000;
+    font-weight: bold;
+    letter-spacing: 1px;
+    &:hover {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+// SHOW
+.article-meta-details {
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+}
+
+.article-actions {
+    border-top: 1px solid #eaeaea;
+    padding-top: 5px;
+}
+
+.description {
+    margin-top: 0;
+}
+
+.article-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.article-body {
+    border-top: 1px solid #eaeaea;
+    padding: 15px 0;
+}
+
+// USERS - SHOW
+.listing {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,84 @@
+<div class="container jumbotron">
+  <div class="row">
+    <p align="center" class="text-left">New transaction</p>
+    <div class="col-xs-12">
+        <%= form_for(@transaction, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+            <div class="form-group">
+                <div class="control-label col-sm-2">
+                    <%= f.label :sender %>
+                </div>
+                <div class="col-sm-8">
+                    <%= f.text_field :username, class: "form-control", placeholder: "Your username", autofocus: "true", value: "#{@user.username}" %>
+                </div>
+            </div>
+            <%# buttons to choose %>
+            <div class="form-group">
+                <div class="control-label col-sm-2">
+                </div>
+                <div class="col-xs-4">
+                    <%= link_to "[Choose from receivers]", "", class: "hide-btn-old" %>
+                </div>
+                <div class="col-xs-5">
+                    <%= link_to "[New receiver]", "", class: "hide-btn-new" %>
+                </div>
+            </div>
+            <%# fields to show %>
+            <div class="form-group old-receiver">
+                <div class="control-label col-sm-2">
+                    <%= f.label "Select a receiver" %>
+                </div>
+                <div class="col-sm-8">
+                    <%= select_tag "Transaction", options_for_select(@users.collect{ |user| [user.username]}.insert(0, "Select a receiver")), class: "form-control" %>
+                </div>
+            </div>
+            <div class="form-group new-receiver">
+                <div class="control-label col-sm-2">
+                    <%= f.label "New receiver" %>
+                </div>
+                <div class="col-sm-8">
+                    <%= f.text_field :username, class: "form-control", placeholder: "Enter a new receiver", autofocus: "true" %>
+                </div>
+            </div>
+            <div id="show-contract" class="form-group">
+                <div class="control-label col-sm-2">
+                    <%= f.label "Type of smart contracts" %>
+                </div>
+                <div class="col-sm-2">
+                    <!-- Button trigger modal -->
+                    <button id="smart-contract-nda" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+                        NDA
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <!-- Button trigger modal -->
+                    <button id="smart-contract-time" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenterTime">
+                        Delivery time
+                    </button>
+                </div>
+                <div class="col-sm-6">
+                    <label id="date-accept"></label>
+                </div>
+            </div>
+            <div id="file-change" class="form-group padding-tb-20 light-grey">
+                <div class="control-label col-sm-2">
+                    <%= f.label :file %>
+                </div>
+                <div class="col-sm-8">
+                    <%= f.file_field :file %>
+                </div>
+            </div>
+            <%# submit%>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-2">
+                    <%= f.submit("Send", class: "btn btn-primary btn-xlarge") %>
+                </div>
+                <div id="hide-contract-label" class="col-sm-8">
+                    <%= link_to "Send as Smart contract", "", class: "btn btn-primary btn-xlarge" %>
+                </div>
+            </div>
+        <%end%>
+    </div>
+  </div>
+</div>
+<%= render partial: "modal" %>
+<%= render partial: "modal_time" %>
